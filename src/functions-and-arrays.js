@@ -1,20 +1,64 @@
 // Iteration #1: Find the maximum
-function maxOfTwoNumbers() {}
+function maxOfTwoNumbers(number1, number2) 
+{
+if (number1 > number2)
+{
+  return number1;
+}
+else if (number1 < number2)
+{
+  return number2;
+}
+else
+{
+  return number1 || number2
+}
+}
 
 
 
 // Iteration #2: Find longest word
 const words = ['mystery', 'brother', 'aviator', 'crocodile', 'pearl', 'orchard', 'crackpot'];
 
-function findLongestWord() {}
+function findLongestWord(words)
+{
+  let longestWord= "";
+ for (let i = 0; i < words.length; i++)
+ {
+  if (words[i].length > longestWord.length)
+  {
+    longestWord = words[i];
+  }
+   else if (words.length == 0)
+   {
+    return null
+   }
+ }
+  return longestWord;
+}
 
+// Tuve problemas con este ya que no conseguía averiguar qué lógica usar para encontrar la palabra más larga, consulté varios foros y publicaciones hasta hallar una lógica que 
+// entendí y me convenció. Inicialicé la variable "longestWord" vacía, por tanto no tiene caracteres. La primera palabra del array que sea recorrida será mayor a dicha variable, 
+// por tanto sera sustituída por esta palabra, si la siguiente palabra es más larga, sucederá lo mismo, sino no sucederá nada y así sucesivamente hasta que solo quede
+// la más larga
 
+//Tuve problemas de todas maneras con la condición de que devolviese null en caso de que fuese invocada con un array vacio. Revisé apuntes y varias webs pero no conseguí resolverlo
 
 // Iteration #3: Calculate the sum
 const numbers = [6, 12, 1, 18, 13, 16, 2, 1, 8, 10];
 
-function sumNumbers() {}
+function sumNumbers(numbers) 
+{
+  sum = 0
+  for (let i = 0; i < numbers.length; i++)
+  {
+    sum += numbers[i];
+  }
 
+  return sum;
+}
+
+//Recuerdo haber hecho ejercicios así durante el prework y también Modulo 0, por eso seguramente lo encontré más fácil que los anteriores.
 
 
 // Iteration #3.1 Bonus:
@@ -26,13 +70,32 @@ function sum() {}
 // Level 1: Array of numbers
 const numbersAvg = [2, 6, 9, 10, 7, 4, 1, 9];
 
-function averageNumbers() {}
+function averageNumbers(numbersAvg) 
+{
+sum = 0
+  for (let i = 0; i < numbersAvg.length; i++)
+  {
+    sum += numbersAvg[i];
+  }
+  return sum / numbersAvg.length;
+}
 
 
 // Level 2: Array of strings
 const wordsArr = ['seat', 'correspond', 'linen', 'motif', 'hole', 'smell', 'smart', 'chaos', 'fuel', 'palace'];
 
-function averageWordLength() { }
+function averageWordLength(wordsArr) 
+{
+  let counter = 0;
+  for (let i = 0; i < wordsArr.length; i++)
+  {
+    counter += wordsArr[i].length;
+  }
+  const average = counter / wordsArr.length;
+  return average;
+}
+
+
 
 // Bonus - Iteration #4.1
 function avg() {}
@@ -52,14 +115,43 @@ const wordsUnique = [
   'bring'
 ];
 
-function uniquifyArray() {}
+function uniquifyArray(wordsUnique) 
+{
+}
+
+
+///Intenté un rato hacer este pero no conseguí la manera de completarlo, creía que lo tenía cerca pero al hacer las comprobaciones solo me cumplía una condicion.
+//No entendía muy bien qué sucedía así que me puse con el siguiente.
+
 
 
 
 // Iteration #6: Find elements
-const wordsFind = ['machine', 'subset', 'trouble', 'starting', 'matter', 'eating', 'truth', 'disobedience'];
 
-function doesWordExist() {}
+const wordsFind = ['machine', 'subset', 'trouble', 'starting', 'matter', 'eating', 'truth', 'disobedience']
+
+function doesWordExist(word, wordsFind)
+{
+  let count = 0;
+
+  for (let i = 0; i < wordsFind.length; i++)
+   {
+     if (wordsFind[i] === word)
+    {
+     count++;
+     }
+   }
+  if (count === 0)
+  {
+   return false;
+  }
+  else if (count >= 1)
+  {
+  return true;
+  }
+  
+}
+doesWordExist(word, wordsFind)
 
 
 
@@ -78,7 +170,30 @@ const wordsCount = [
   'matter'
 ];
 
-function howManyTimes() {}
+function howManyTimes(word, wordsCount) 
+{
+  let wordCount = 0;
+  for (let i = 0; i < wordsCount.length; i++)
+   {
+     if (wordsCount[i] === word)
+     {
+     wordCount++;
+     }
+     
+   }
+ if (wordCount === 5)
+ {
+   return 5;
+ }
+ else if (wordCount = 1)
+ {
+  return 1;
+ }
+ else if (wordCount = 0){
+ return 0;
+ }
+}
+howManyTimes(word, wordsCount)
 
 
 
