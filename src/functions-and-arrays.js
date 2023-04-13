@@ -165,32 +165,19 @@ function uniquifyArray(wordsUnique)
 
 const wordsFind = ['machine', 'subset', 'trouble', 'starting', 'matter', 'eating', 'truth', 'disobedience']
 
-function doesWordExist(word, wordsFind)
+function doesWordExist(wordsFind, word)
 {
- 
-    if (count === 0)
+  if (wordsFind.length === 0)
   {
-   return false;
+    return null
   }
-  let count = 0;
-  
-  for (let i = 0; i < wordsFind.length; i++)
-   {
-     if (wordsFind[i] === word)
-    {
-     count++;
-     }
-   }
-  
-  if (count >= 1)
-  {
-  return true;
-  }
+
+    return wordsFind.includes(word)
   
 }
-doesWordExist('machine', wordsFind)
+doesWordExist(wordsFind, 'machine')
 
-
+  
 
 // Iteration #7: Count repetition
 const wordsCount = [
@@ -207,30 +194,22 @@ const wordsCount = [
   'matter'
 ];
 
-function howManyTimes(word, wordsCount) 
+function howManyTimes(wordsCount, word) 
 {
-  let wordCount = 0;
-  for (let i = 0; i < wordsCount.length; i++)
-   {
-     if (wordsCount[i] === word)
-     {
-     wordCount++;
-     }
-     
-   }
- if (wordCount === 5)
- {
-   return 5;
- }
- else if (wordCount = 1)
- {
-  return 1;
- }
- else if (wordCount = 0){
- return 0;
- }
+  let count = 0;
+
+  for (let i = 0; i < wordsCount; i ++)
+  { 
+    if (wordsCount[i] === word)
+    {
+      count ++;
+    }
+
+  }
+
+ return count
 }
-howManyTimes(word, wordsCount)
+
 
 
 
@@ -258,7 +237,12 @@ const matrix = [
   [1, 70, 54, 71, 83, 51, 54, 69, 16, 92, 33, 48, 61, 43, 52, 1, 89, 19, 67, 48]
 ];
 
-function greatestProduct() {}
+function greatestProduct(matrix)
+
+{
+ 
+
+}
 
 
 
