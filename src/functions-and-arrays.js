@@ -22,17 +22,20 @@ const words = ['mystery', 'brother', 'aviator', 'crocodile', 'pearl', 'orchard',
 
 function findLongestWord(words)
 {
-  let longestWord= "";
+  if (words.length === 0) 
+  {
+    return null                  // ! CLAUSULA DE GUARDIA
+  }
+
+  let longestWord = "";
+
  for (let i = 0; i < words.length; i++)
  {
   if (words[i].length > longestWord.length)
   {
     longestWord = words[i];
   }
-   else if (words.length == 0)
-   {
-    return null
-   }
+
  }
   return longestWord;
 }
@@ -44,12 +47,15 @@ function findLongestWord(words)
 
 //Tuve problemas de todas maneras con la condición de que devolviese null en caso de que fuese invocada con un array vacio. Revisé apuntes y varias webs pero no conseguí resolverlo
 
+
+
 // Iteration #3: Calculate the sum
 const numbers = [6, 12, 1, 18, 13, 16, 2, 1, 8, 10];
 
 function sumNumbers(numbers) 
 {
-  sum = 0
+  let sum = 0  //! Olvidé la variable let 
+
   for (let i = 0; i < numbers.length; i++)
   {
     sum += numbers[i];
@@ -72,7 +78,12 @@ const numbersAvg = [2, 6, 9, 10, 7, 4, 1, 9];
 
 function averageNumbers(numbersAvg) 
 {
-sum = 0
+  if (numbersAvg.length === 0)
+   {
+    return null
+  }
+
+let sum = 0
   for (let i = 0; i < numbersAvg.length; i++)
   {
     sum += numbersAvg[i];
@@ -80,19 +91,24 @@ sum = 0
   return sum / numbersAvg.length;
 }
 
+  //todo let sum = sumNumbers(numbersAvg)  reutilizar la función que sigue la misma lógica de este ejercicio
 
 // Level 2: Array of strings
 const wordsArr = ['seat', 'correspond', 'linen', 'motif', 'hole', 'smell', 'smart', 'chaos', 'fuel', 'palace'];
 
 function averageWordLength(wordsArr) 
 {
+  if (wordsArr. length === 0)  //! CLAUSULA DE GUARDIA 
+  {
+    return null
+  }
   let counter = 0;
   for (let i = 0; i < wordsArr.length; i++)
   {
     counter += wordsArr[i].length;
   }
-  const average = counter / wordsArr.length;
-  return average;
+  
+  return counter / wordsArr.length;
 }
 
 
@@ -117,8 +133,27 @@ const wordsUnique = [
 
 function uniquifyArray(wordsUnique) 
 {
-}
+ if (wordsUnique.length === 0)
+ {
+  return null
+ }
+  
+ let newArr = [];
 
+  for (let i = 0; i < wordsUnique.length; i ++)
+    {
+      if (newArr.includes( wordsUnique[i]) === false )
+      {
+        newArr.push(wordsUnique[i])
+      }
+
+
+    }
+
+  return newArr
+
+}
+// ! REVISAR ESTE EJERCICIO
 
 ///Intenté un rato hacer este pero no conseguí la manera de completarlo, creía que lo tenía cerca pero al hacer las comprobaciones solo me cumplía una condicion.
 //No entendía muy bien qué sucedía así que me puse con el siguiente.
@@ -132,8 +167,13 @@ const wordsFind = ['machine', 'subset', 'trouble', 'starting', 'matter', 'eating
 
 function doesWordExist(word, wordsFind)
 {
+ 
+    if (count === 0)
+  {
+   return false;
+  }
   let count = 0;
-
+  
   for (let i = 0; i < wordsFind.length; i++)
    {
      if (wordsFind[i] === word)
@@ -141,17 +181,14 @@ function doesWordExist(word, wordsFind)
      count++;
      }
    }
-  if (count === 0)
-  {
-   return false;
-  }
-  else if (count >= 1)
+  
+  if (count >= 1)
   {
   return true;
   }
   
 }
-doesWordExist(word, wordsFind)
+doesWordExist('machine', wordsFind)
 
 
 
